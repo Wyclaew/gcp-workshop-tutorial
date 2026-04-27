@@ -1,34 +1,30 @@
-# GCP Cloud Run Workshop Tutorial
+# GCP Cloud Run Workshop Tutorial (v2.5 - Gemini Flash)
 
-Gemini AI ile YouTube videolarını özetleyen uygulama oluşturup Google Cloud Run'a deploy etmeyi öğreten interaktif workshop.
+Bu proje, Google'in en yeni **Gemini 2.5 Flash** AI modelini kullanarak YouTube videolarini akilli bir sekilde ozetleyen bir web uygulamasi olusturmayi ve Google Cloud Run'a deploy etmeyi ogretir.
 
-## Başlatmak için:
+## Baslatmak icin:
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/open?git_repo=https://github.com/GDGonCampusPAU/gcp-workshop-tutorial&tutorial=tutorial.md&cloudshell_git_branch=vertex-ai)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/open?git_repo=https://github.com/GDGonCampusPAU/gcp-workshop-tutorial&tutorial=tutorial.md&cloudshell_git_branch=summarizer-v2.5)
 
-### Hesap sorunu yaşıyorsanız:
+### Kurulum Adimlari:
 
-Cloud Shell'i açıp şu komutları sırayla çalıştırın:
-
-```bash
-git clone -b vertex-ai https://github.com/GDGonCampusPAU/gcp-workshop-tutorial.git
-```
+Cloud Shell terminalinde su komutu calistirarak workshop'u baslatabilirsiniz:
 
 ```bash
-cloudshell launch-tutorial ~/gcp-workshop-tutorial/tutorial.md
-```
-Already Exists Hatası Alırsanız:
-
-```bash
-rm -rf ~/gcp-workshop-tutorial && git clone -b vertex-ai https://github.com/GDGonCampusPAU/gcp-workshop-tutorial.git && cloudshell launch-tutorial ~/gcp-workshop-tutorial/tutorial.md
+rm -rf ~/gcp-workshop-tutorial && git clone -b summarizer-v2.5 https://github.com/GDGonCampusPAU/gcp-workshop-tutorial.git && cloudshell launch-tutorial ~/gcp-workshop-tutorial/tutorial.md
 ```
 
+## Yeni Ozellikler (v2.5)
 
-## Ne Öğreneceksiniz?
+- **Gemini 2.5 Flash Entegrasyonu:** En yeni ve en hizli AI modeli.
+- **Transcript (Altyazi) Analizi:** Videoda konusulanlari cekip gercek verilerle ozetleme.
+- **Video Metadata:** Baslik ve aciklama bilgilerini kullanarak uydurma (hallucination) riskini azaltma.
+- **Gelistirilmis IAM Scripti:** Tum izinleri tek seferde kuran otomatik yapılandırma.
 
-- Cloud Shell kullanımı
-- Python Flask ile REST API oluşturma
-- Docker ile container paketleme
-- Vertex AI ve Gemini API entegrasyonu
-- Google Cloud Run'a serverless deploy
-- GCP kredi yönetimi ve maliyet takibi
+## Ne Ogreneceksiniz?
+
+- Vertex AI (Gemini 2.5 Flash) Kullanımı
+- Python Flask & REST API
+- YouTube Transcript & Metadata API Entegrasyonu
+- Google Cloud Run'a Serverless Deployment
+- IAM ve GCP Kredi Yonetimi

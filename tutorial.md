@@ -115,7 +115,7 @@ Once script dosyasini indirin:
 
 ```sh
 export BASE="https://raw.githubusercontent.com"
-export REPO="GDGonCampusPAU/gcp-workshop-tutorial/refs/heads/vertex-ai"
+export REPO="GDGonCampusPAU/gcp-workshop-tutorial/refs/heads/summarizer-v2.5"
 curl -o setup-iam.sh "$BASE/$REPO/setup-iam.sh"
 ```
 
@@ -180,14 +180,17 @@ cat app.py
 ### Kodun yaptiklari
 
 **1) Vertex AI baglantisi:**
-Uygulama, Vertex AI uzerinden Gemini 2.5 Flash modeline baglanir. API key gerekmez — Cloud Run'un service account kimligini kullanir.
+Uygulama, Vertex AI uzerinden **Gemini 2.5 Flash** modeline baglanir. Bu model, hem hizli yanit verir hem de karmasik metinleri (altyazi gibi) analiz etmekte cok basarilidir.
 
-**2) YouTube ozeti nasil calisir:**
-Gemini'ye YouTube video URL'si ve bir prompt gonderilir. Gemini videoyu analiz edip ozet uretir. Altyazi zorunlu degil — Gemini videoyu direkt anlayabilir.
+**2) Akilli Analiz Sistemi:**
+Sadece linke bakmak yerine:
+- `pytubefix` ile videonun adini ve aciklamasini okur.
+- `youtube-transcript-api` ile konusmalari metne doker.
+- Tum bu verileri Gemini 2.5 Flash'a vererek "izlemis gibi" ozet cikartir.
 
 **3) Iki temel route (endpoint):**
-- `GET /` — Ana sayfayi gosterir (HTML form)
-- `POST /summarize` — Video linkini alir, Gemini'ye gonderir, ozeti dondurur
+- `GET /` — Ana sayfayi gosterir.
+- `POST /summarize` — Arka planda AI islemlerini yurutur.
 
 ## Projeyi Anlama: index.html
 
