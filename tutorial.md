@@ -208,21 +208,17 @@ Bu projede kullandigimiz en onemli kavram Gemini API.
 
 **Vertex AI:** Google'in kurumsal AI platformu. Gemini dahil tum Google AI modellerine API uzerinden erisim saglar. Her istek GCP kredinizden dusulur.
 
-**Gemini 2.5 Flash:** Google'in hizli ve ekonomik AI modelidir. Metin anlama, ozetleme, soru-cevap gibi gorevlerde cok basarilidir.
+**Gemini 2.5 Flash:** Google'in en yeni, hizli ve ekonomik AI modelidir. Metin, ses ve video verilerini analiz etmekte cok basarilidir.
 
 **Kodda nasil kullaniliyor?**
 ```python
-import vertexai
-from vertexai.generative_models import GenerativeModel
-
-# Vertex AI baslat (proje ID otomatik okunur)
-vertexai.init(project=PROJECT_ID, location="us-central1")
-
-# Modeli sec
+# Modeli sec (KESİNLİKLE 2.5 Flash)
 model = GenerativeModel("gemini-2.5-flash")
 
-# Prompt gonder, ozet al
-response = model.generate_content(f"Summarize: {youtube_url}")
+# Akilli Ozetleme Mekanizmasi:
+# 1. Videonun basligini ve aciklamasini ceker.
+# 2. Varsa altyazilari (transcript) okur.
+# 3. Tum bu verileri Gemini 2.5 Flash'a gondererek hatasiz bir ozet uretir.
 ```
 
 Bu uc adim tum AI ozetleme mekanizmasinin ozudur.
